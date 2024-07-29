@@ -11,11 +11,11 @@ pub fn include_path() -> PathBuf {
     include_path
 }
 
-/// Return a path to `protoc` binary for @@ARCH@@.
+/// Return a path to `protoc` binary for ARCH.
 pub fn protoc_bin_path() -> PathBuf {
     let protoc_bin_path = cargo_manifest_dir()
         .join("bin")
-        .join("protoc@@EXE_SUFFIX@@");
+        .join("protocEXE_SUFFIX");
     assert!(
         protoc_bin_path.exists(),
         "internal: protoc not found {}",

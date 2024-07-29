@@ -29,10 +29,10 @@ update_arch() {
 
     for file in Cargo.toml src/lib.rs; do
         sed -i~ -e "
-            s/@@CRATE_NAME@@/$crate/
-            s/@@CRATE_VERSION@@/$crate_version/
-            s/@@ARCH@@/$arch/
-            s/@@EXE_SUFFIX@@/$exe_suffix/
+            s/CRATE_NAME/$crate/
+            s/0.0.0/$crate_version/
+            s/ARCH/$arch/
+            s/EXE_SUFFIX/$exe_suffix/
         " "$crate/$file"
     done
 
